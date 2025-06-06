@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prime Number Generator</title>
+</head>
+<body>
+
+  <div style="max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px;">
+    <h2 style="text-align: center; margin-bottom: 30px;">Prime Number Generator</h2>
+
+    <table style="width: 100%;">
+      <tr>
+        <td style="padding: 10px;">Start</td>
+        <td style="padding: 10px;">
+          <input type="number" id="start" style="width: 100%; padding: 8px;"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">End</td>
+        <td style="padding: 10px;">
+          <input type="number" id="end" style="width: 100%; padding: 8px;"/>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Prime Number</td>
+        <td style="padding: 10px;">
+          <textarea id="result" rows="5" style="width: 100%; padding: 8px;"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center; padding: 10px;">
+          <button onclick="generatePrimes()" style="padding: 10px 20px; background-color: #ccc; border: none; cursor: pointer; font-size: 16px;">
+            Generate
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function isPrime(num) {
+      if (num < 2) return false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+
+    function generatePrimes() {
+      const start = document.getElementById("start").value;
+      const end = document.getElementById("end").value;
+      let result = "";
+
+      if (start > end) {
+        result = "Please enter valid start and end values.";
+      } else {
+        for (let i = start; i <= end; i++) {
+          if (isPrime(i)) {
+            result += i + " ";
+          }
+        }
+      }
+
+      document.getElementById("result").value = result;
+    }
+  </script>
+
+</body>
+</html>

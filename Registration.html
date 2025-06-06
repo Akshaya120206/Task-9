@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+</head>
+<body style="font-family: Arial; display: flex; justify-content: center; align-items: center;">
+
+  <form onsubmit="return checkForm()" style="padding: 20px;width: 500px;">
+    <h2 style="text-align: center;">Registration Form</h2>
+
+    <!-- Name Field -->
+    <div style="margin-bottom: 10px;">
+      <label style="display: inline-block; width: 80px;">Name:</label>
+      <input type="text" id="name" style="width: 250px; border: 1px solid red;">
+      <span id="nameError" style="color: red; font-size: 14px;">This field is required</span>
+    </div>
+
+    <!-- Email Field -->
+    <div style="margin-bottom: 10px;">
+      <label style="display: inline-block; width: 80px;">Email:</label>
+      <input type="text" id="email" style="width: 250px; border: 1px solid red;">
+      <span id="emailError" style="color: red; font-size: 14px;">This field is required</span>
+    </div>
+
+    <!-- Website Field -->
+    <div style="margin-bottom: 10px;">
+      <label style="display: inline-block; width: 80px;">Website:</label>
+      <input type="text" id="website" style="width: 250px; border: 1px solid red;">
+      <span id="websiteError" style="color: red; font-size: 14px;">This field is required</span>
+    </div>
+
+    <!-- Message Field -->
+    <div style="margin-bottom: 10px;">
+      <label style="display: inline-block; width: 80px; vertical-align: top;">Message:</label>
+      <textarea id="message" rows="3" style="width: 250px; border: 1px solid red;"></textarea>
+      <span id="messageError" style="color: red; font-size: 14px;">This field is required</span>
+    </div>
+
+    <!-- Submit Button -->
+    <div style="text-align: center; margin-top: 10px;">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+  <script>
+    function checkForm() {
+      let isValid = true;
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let website = document.getElementById("website").value;
+      let message = document.getElementById("message").value;
+
+      document.getElementById("nameError").style.display = name ? "none" : "inline";
+      document.getElementById("emailError").style.display = email ? "none" : "inline";
+      document.getElementById("websiteError").style.display = website ? "none" : "inline";
+      document.getElementById("messageError").style.display = message ? "none" : "inline";
+
+      if (!name || !email || !website || !message) {
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    window.onload = function() {
+      document.getElementById("nameError").style.display = "none";
+      document.getElementById("emailError").style.display = "none";
+      document.getElementById("websiteError").style.display = "none";
+      document.getElementById("messageError").style.display = "none";
+    };
+  </script>
+
+</body>
+</html>
+
+
