@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+#container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login {
+  background-color: white;
+  padding: 40px;
+  border: 1px solid #ddd;
+  width: 300px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 10px;
+}
+
+#title {
+  font-family: 'Arial', cursive;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #262626;
+}
+
+#username,
+#password {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#login-btn {
+  width: 100%;
+  background-color: #0095f6;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+
+}
+
+#options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+#signup {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+#forgot-link,
+#signup-link {
+  color: #00376b;
+  text-decoration: none;
+}
